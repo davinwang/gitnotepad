@@ -34,77 +34,7 @@ GitNotepad is a web-based markdown editor that combines VS Code-like editing exp
 **Feasibility**: High - Modern optimization techniques enable lightweight apps
 
 ## Technical Architecture
-```
-
-# GitNotepad - 基于Git存储的跨平台Markdown编辑器
-
-## 概述
-GitNotepad是一款基于网页的Markdown编辑器，结合了VS Code风格的编辑体验和基于Git的存储功能。它提供真正的所见即所得Markdown编辑，同时通过Git集成自动版本控制所有更改。
-
-## 核心功能与可行性分析
-
-### 1. VS Code风格的所见即所得Markdown编辑器
-**实现**: 使用[ProseMirror](https://prosemirror.net)或[CodeMirror](https://codemirror.net)配合Markdown扩展
-**可行性**: 高 - 现有强大的编辑器框架支持带实时预览的Markdown
-
-### 2. 跨平台兼容性
-**实现**: 使用CSS Grid/Flexbox实现响应式设计，支持触摸事件
-**可行性**: 高 - 现代Web框架(React/Vue/Svelte)提供出色的跨平台支持
-
-### 3. Git存储集成
-**实现**:
-- GitHub OAuth认证
-- LocalStorage用于会话持久化
-- [Isomorphic-git](https://isomorphic-git.org)用于浏览器端Git操作
-**可行性**: 高 - 现有库可处理浏览器中的Git操作
-
-### 4. 扩展Markdown支持
-**实现**:
-- [Mermaid.js](https://mermaid.js.org)用于图表
-- [MathJax](https://www.mathjax.org)或[KaTeX](https://katex.org)用于LaTeX
-**可行性**: 高 - 有成熟的库可用
-
-### 5. 轻量级架构
-**实现**:
-- 微框架(Preact/Svelte)
-- CDN托管依赖项
-- Service Workers用于缓存
-**可行性**: 高 - 现代优化技术可实现轻量级应用
-
-## 技术架构
 ```mermaid
-graph TD
-    A[浏览器UI] -->|Markdown编辑| B[ProseMirror]
-    A -->|Git操作| C[Isomorphic-git]
-    A -->|图表| D[Mermaid.js]
-    A -->|公式| E[KaTeX]
-    C -->|存储| F[GitHub API]
-    C -->|本地缓存| G[IndexedDB]
-```
-
-## 开发路线图
-1. **核心编辑器**: 设置带实时预览的编辑器
-2. **Git集成**: 实现仓库绑定/提交/推送
-3. **扩展语法**: 添加Mermaid和LaTeX支持
-4. **响应式UI**: 移动/桌面布局
-5. **持久化**: 使用LocalStorage进行会话管理
-
-## 快速开始
-```bash
-# 安装依赖
-npm install
-
-# 启动开发服务器
-npm run dev
-
-# 构建生产版本
-npm run build
-```
-
-## 贡献指南
-- 遵循GitFlow工作流程
-- 为新功能编写测试
-- 保持依赖最小化mermaid
 graph TD
     A[Browser UI] -->|Markdown Editing| B[ProseMirror]
     A -->|Git Operations| C[Isomorphic-git]
@@ -114,76 +44,6 @@ graph TD
     C -->|Local Cache| G[IndexedDB]
 ```
 
-# GitNotepad - 基于Git存储的跨平台Markdown编辑器
-
-## 概述
-GitNotepad是一款基于网页的Markdown编辑器，结合了VS Code风格的编辑体验和基于Git的存储功能。它提供真正的所见即所得Markdown编辑，同时通过Git集成自动版本控制所有更改。
-
-## 核心功能与可行性分析
-
-### 1. VS Code风格的所见即所得Markdown编辑器
-**实现**: 使用[ProseMirror](https://prosemirror.net)或[CodeMirror](https://codemirror.net)配合Markdown扩展
-**可行性**: 高 - 现有强大的编辑器框架支持带实时预览的Markdown
-
-### 2. 跨平台兼容性
-**实现**: 使用CSS Grid/Flexbox实现响应式设计，支持触摸事件
-**可行性**: 高 - 现代Web框架(React/Vue/Svelte)提供出色的跨平台支持
-
-### 3. Git存储集成
-**实现**:
-- GitHub OAuth认证
-- LocalStorage用于会话持久化
-- [Isomorphic-git](https://isomorphic-git.org)用于浏览器端Git操作
-**可行性**: 高 - 现有库可处理浏览器中的Git操作
-
-### 4. 扩展Markdown支持
-**实现**:
-- [Mermaid.js](https://mermaid.js.org)用于图表
-- [MathJax](https://www.mathjax.org)或[KaTeX](https://katex.org)用于LaTeX
-**可行性**: 高 - 有成熟的库可用
-
-### 5. 轻量级架构
-**实现**:
-- 微框架(Preact/Svelte)
-- CDN托管依赖项
-- Service Workers用于缓存
-**可行性**: 高 - 现代优化技术可实现轻量级应用
-
-## 技术架构
-```mermaid
-graph TD
-    A[浏览器UI] -->|Markdown编辑| B[ProseMirror]
-    A -->|Git操作| C[Isomorphic-git]
-    A -->|图表| D[Mermaid.js]
-    A -->|公式| E[KaTeX]
-    C -->|存储| F[GitHub API]
-    C -->|本地缓存| G[IndexedDB]
-```
-
-## 开发路线图
-1. **核心编辑器**: 设置带实时预览的编辑器
-2. **Git集成**: 实现仓库绑定/提交/推送
-3. **扩展语法**: 添加Mermaid和LaTeX支持
-4. **响应式UI**: 移动/桌面布局
-5. **持久化**: 使用LocalStorage进行会话管理
-
-## 快速开始
-```bash
-# 安装依赖
-npm install
-
-# 启动开发服务器
-npm run dev
-
-# 构建生产版本
-npm run build
-```
-
-## 贡献指南
-- 遵循GitFlow工作流程
-- 为新功能编写测试
-- 保持依赖最小化
-
 ## Development Roadmap
 1. **Core Editor**: Setup editor with live preview
 2. **Git Integration**: Implement repository binding/commit/push
@@ -192,77 +52,7 @@ npm run build
 5. **Persistence**: LocalStorage for session management
 
 ## Getting Started
-```
-
-# GitNotepad - 基于Git存储的跨平台Markdown编辑器
-
-## 概述
-GitNotepad是一款基于网页的Markdown编辑器，结合了VS Code风格的编辑体验和基于Git的存储功能。它提供真正的所见即所得Markdown编辑，同时通过Git集成自动版本控制所有更改。
-
-## 核心功能与可行性分析
-
-### 1. VS Code风格的所见即所得Markdown编辑器
-**实现**: 使用[ProseMirror](https://prosemirror.net)或[CodeMirror](https://codemirror.net)配合Markdown扩展
-**可行性**: 高 - 现有强大的编辑器框架支持带实时预览的Markdown
-
-### 2. 跨平台兼容性
-**实现**: 使用CSS Grid/Flexbox实现响应式设计，支持触摸事件
-**可行性**: 高 - 现代Web框架(React/Vue/Svelte)提供出色的跨平台支持
-
-### 3. Git存储集成
-**实现**:
-- GitHub OAuth认证
-- LocalStorage用于会话持久化
-- [Isomorphic-git](https://isomorphic-git.org)用于浏览器端Git操作
-**可行性**: 高 - 现有库可处理浏览器中的Git操作
-
-### 4. 扩展Markdown支持
-**实现**:
-- [Mermaid.js](https://mermaid.js.org)用于图表
-- [MathJax](https://www.mathjax.org)或[KaTeX](https://katex.org)用于LaTeX
-**可行性**: 高 - 有成熟的库可用
-
-### 5. 轻量级架构
-**实现**:
-- 微框架(Preact/Svelte)
-- CDN托管依赖项
-- Service Workers用于缓存
-**可行性**: 高 - 现代优化技术可实现轻量级应用
-
-## 技术架构
-```mermaid
-graph TD
-    A[浏览器UI] -->|Markdown编辑| B[ProseMirror]
-    A -->|Git操作| C[Isomorphic-git]
-    A -->|图表| D[Mermaid.js]
-    A -->|公式| E[KaTeX]
-    C -->|存储| F[GitHub API]
-    C -->|本地缓存| G[IndexedDB]
-```
-
-## 开发路线图
-1. **核心编辑器**: 设置带实时预览的编辑器
-2. **Git集成**: 实现仓库绑定/提交/推送
-3. **扩展语法**: 添加Mermaid和LaTeX支持
-4. **响应式UI**: 移动/桌面布局
-5. **持久化**: 使用LocalStorage进行会话管理
-
-## 快速开始
 ```bash
-# 安装依赖
-npm install
-
-# 启动开发服务器
-npm run dev
-
-# 构建生产版本
-npm run build
-```
-
-## 贡献指南
-- 遵循GitFlow工作流程
-- 为新功能编写测试
-- 保持依赖最小化bash
 # Install dependencies
 npm install
 
@@ -273,45 +63,52 @@ npm run dev
 npm run build
 ```
 
+## Contribution Guidelines
+- Follow GitFlow workflow
+- Write tests for new features
+- Keep dependencies minimal
+
+---
+
 # GitNotepad - 基于Git存储的跨平台Markdown编辑器
 
 ## 概述
-GitNotepad是一款基于网页的Markdown编辑器，结合了VS Code风格的编辑体验和基于Git的存储功能。它提供真正的所见即所得Markdown编辑，同时通过Git集成自动版本控制所有更改。
+GitNotepad是一款基于网络的Markdown编辑器，结合了类似VS Code的编辑体验与基于Git的存储。它提供真正的所见即所得Markdown编辑功能，并通过Git集成自动版本控制所有更改。
 
 ## 核心功能与可行性分析
 
-### 1. VS Code风格的所见即所得Markdown编辑器
-**实现**: 使用[ProseMirror](https://prosemirror.net)或[CodeMirror](https://codemirror.net)配合Markdown扩展
-**可行性**: 高 - 现有强大的编辑器框架支持带实时预览的Markdown
+### 1. 类似VS Code的所见即所得Markdown编辑器
+**实现方式**: 使用[ProseMirror](https://prosemirror.net)或[CodeMirror](https://codemirror.net)配合Markdown扩展
+**可行性**: 高 - 现有的强大编辑器框架支持实时预览
 
 ### 2. 跨平台兼容性
-**实现**: 使用CSS Grid/Flexbox实现响应式设计，支持触摸事件
-**可行性**: 高 - 现代Web框架(React/Vue/Svelte)提供出色的跨平台支持
+**实现方式**: 使用CSS Grid/Flexbox的响应式设计，触摸事件支持
+**可行性**: 高 - 现代网页框架（React/Vue/Svelte）提供出色的跨平台支持
 
 ### 3. Git存储集成
-**实现**:
-- GitHub OAuth认证
+**实现方式**:
+- GitHub OAuth用于身份验证
 - LocalStorage用于会话持久化
-- [Isomorphic-git](https://isomorphic-git.org)用于浏览器端Git操作
+- [Isomorphic-git](https://isomorphic-git.org)用于浏览器端的Git操作
 **可行性**: 高 - 现有库可处理浏览器中的Git操作
 
 ### 4. 扩展Markdown支持
-**实现**:
+**实现方式**:
 - [Mermaid.js](https://mermaid.js.org)用于图表
 - [MathJax](https://www.mathjax.org)或[KaTeX](https://katex.org)用于LaTeX
-**可行性**: 高 - 有成熟的库可用
+**可行性**: 高 - 成熟的库已存在
 
 ### 5. 轻量级架构
-**实现**:
-- 微框架(Preact/Svelte)
+**实现方式**:
+- 微框架（Preact/Svelte）
 - CDN托管依赖项
-- Service Workers用于缓存
+- 服务工作者用于缓存
 **可行性**: 高 - 现代优化技术可实现轻量级应用
 
 ## 技术架构
 ```mermaid
 graph TD
-    A[浏览器UI] -->|Markdown编辑| B[ProseMirror]
+    A[浏览器界面] -->|Markdown编辑| B[ProseMirror]
     A -->|Git操作| C[Isomorphic-git]
     A -->|图表| D[Mermaid.js]
     A -->|公式| E[KaTeX]
@@ -320,13 +117,13 @@ graph TD
 ```
 
 ## 开发路线图
-1. **核心编辑器**: 设置带实时预览的编辑器
-2. **Git集成**: 实现仓库绑定/提交/推送
-3. **扩展语法**: 添加Mermaid和LaTeX支持
-4. **响应式UI**: 移动/桌面布局
-5. **持久化**: 使用LocalStorage进行会话管理
+1. **核心编辑器**: 搭建支持实时预览的编辑器
+2. **Git集成**: 实现仓库绑定/提交/推送功能
+3. **扩展语法**: 增加Mermaid和LaTeX支持
+4. **响应式UI**: 移动端/桌面端布局
+5. **持久化存储**: 使用LocalStorage进行会话管理
 
-## 快速开始
+## 快速入门
 ```bash
 # 安装依赖
 npm install
@@ -339,11 +136,6 @@ npm run build
 ```
 
 ## 贡献指南
-- 遵循GitFlow工作流程
+- 遵循GitFlow工作流
 - 为新功能编写测试
-- 保持依赖最小化
-
-## Contribution Guidelines
-- Follow GitFlow workflow
-- Write tests for new features
-- Keep dependencies minimal
+- 保持依赖项最少
