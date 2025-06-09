@@ -68,6 +68,26 @@ npm run build
 - Write tests for new features
 - Keep dependencies minimal
 
+## Project Structure
+gitnotepad/
+├── public/
+│   └── favicon.ico
+├── src/
+│   ├── index.html
+│   ├── index.js          <-- main entry point
+│   ├── auth.js           <-- GitHub OAuth Integration
+│   ├── editor.js         <-- WYSIWYG editor
+│   ├── git.js            <-- Git integration
+│   ├── extensions/       <-- Markdown extensions
+│   │   ├── mermaid.js
+│   │   └── katex.js
+│   ├── ui/               <-- Responsive UI & Persistence
+│   │   ├── responsive.js
+│   │   └── persistence.js
+│   └── styles/
+│       └── main.css
+└── package.json
+
 ---
 
 # GitNotepad - 基于Git存储的跨平台Markdown编辑器
@@ -139,3 +159,23 @@ npm run build
 - 遵循GitFlow工作流
 - 为新功能编写测试
 - 保持依赖项最少
+
+## 项目结构
+gitnotepad/
+├── public/
+│   └── favicon.ico
+├── src/
+│   ├── index.html
+│   ├── index.js          <-- 主入口文件
+│   ├── auth.js           <-- GitHub OAuth 集成
+│   ├── editor.js         <-- 编辑器核心逻辑（ProseMirror 初始化）
+│   ├── git.js            <-- Git 集成逻辑（Isomorphic-git + GitHub API）
+│   ├── extensions/       <-- 扩展 Markdown 支持（Mermaid & KaTeX）
+│   │   ├── mermaid.js
+│   │   └── katex.js
+│   ├── ui/               <-- 响应式 UI 与持久化存储
+│   │   ├── responsive.js
+│   │   └── persistence.js
+│   └── styles/
+│       └── main.css
+└── package.json
