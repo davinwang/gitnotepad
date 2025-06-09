@@ -45,7 +45,7 @@ graph TD
 ```
 
 ## Development Roadmap
-1. **Core Editor**: Setup editor with live preview
+1. **√ Core Editor**: Setup editor with live preview
 2. **Git Integration**: Implement repository binding/commit/push
 3. **Extended Syntax**: Add Mermaid and LaTeX support
 4. **Responsive UI**: Mobile/desktop layouts
@@ -137,7 +137,7 @@ graph TD
 ```
 
 ## 开发路线图
-1. **核心编辑器**: 搭建支持实时预览的编辑器
+1. **√ 核心编辑器**: 搭建支持实时预览的编辑器
 2. **Git集成**: 实现仓库绑定/提交/推送功能
 3. **扩展语法**: 增加Mermaid和LaTeX支持
 4. **响应式UI**: 移动端/桌面端布局
